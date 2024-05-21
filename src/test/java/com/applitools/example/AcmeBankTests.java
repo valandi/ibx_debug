@@ -96,7 +96,7 @@ public class AcmeBankTests {
     @Test
     public void ibxTest() {
 
-        driver.get("C:\\Users\\Valan\\Applitools\\java-ibx\\src\\main\\resources\\MDXCSPortalWeb.html");
+        driver.get("MDXCSPortalWeb.html");
 
 
         /*
@@ -108,13 +108,13 @@ public class AcmeBankTests {
 
 
 
-//        eyes.check(Target.window().fully());
+        eyes.check(Target.window().fully());
 
         /*
          * This won't scroll the page.
          * It takes a region screenshot of the this element, but will not scroll.
          */
-        eyes.check(Target.window().fully().scrollRootElement(By.id("scrollable-outlet")));
+//        eyes.check(Target.window().fully().scrollRootElement(By.id("scrollable-outlet")));
     }
 
     @AfterEach
