@@ -19,6 +19,8 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInfo;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -51,7 +53,7 @@ public class AcmeBankTests {
         }
 
         String runnerName = (USE_ULTRAFAST_GRID) ? "Ultrafast Grid" : "Classic runner";
-        batch = new BatchInfo("Example: Selenium Java JUnit with the " + runnerName);
+        batch = new BatchInfo("Trying to set Scroll Root Element ");
 
         config = new Configuration();
         config.setApiKey(applitoolsApiKey);
@@ -85,8 +87,8 @@ public class AcmeBankTests {
 
         eyes.open(
                 driver,
-                "IBX",
-                "IBX"
+                "IBX with scroll root element",
+                "IBX with scroll root element"
         );
 
     }
@@ -94,7 +96,7 @@ public class AcmeBankTests {
     @Test
     public void ibxTest() {
 
-        driver.get("MDXCSPortalWeb.html");
+        driver.get("C:\\Users\\Valan\\Applitools\\java-ibx\\src\\main\\resources\\MDXCSPortalWeb.html");
 
 
         /*
@@ -106,13 +108,13 @@ public class AcmeBankTests {
 
 
 
-        eyes.check(Target.window().fully());
+//        eyes.check(Target.window().fully());
 
         /*
          * This won't scroll the page.
          * It takes a region screenshot of the this element, but will not scroll.
          */
-        //eyes.check(Target.window().fully().scrollRootElement(By.id("scrollable-outlet")));
+        eyes.check(Target.window().fully().scrollRootElement(By.id("scrollable-outlet")));
     }
 
     @AfterEach
